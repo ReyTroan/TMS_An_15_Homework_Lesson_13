@@ -12,30 +12,32 @@ public class WorkingWithStream {
         for (int i = 0; i < 22; i++){
             numbersList.add(random.nextInt(100));
         }
-
+        // Remove duplicates
         List<Integer> removeDuplicates = numbersList.stream()
                 .distinct()
                 .toList();
 
+        // Output all even elements in the range from 7 to 17 (inclusive)
         List<Integer> outputEvenNumbers = numbersList.stream()
                 .filter(num -> num % 2 == 0 && num >= 7 && num <= 17)
                 .toList();
 
-
+        // Multiply each element by 2
         List<Integer> doublingNumber = numbersList.stream()
                 .map(num -> num * 2)
                 .toList();
 
-
+        //Sort and display the first 4 elements
         List<Integer> sortedFirstFour = numbersList.stream()
                 .sorted()
                 .limit(4)
                 .toList();
 
-
+        // Print the number of elements in the stream
         long count = numbersList.stream().count();
 
 
+        // Print the arithmetic mean of all the numbers in the stream
         double averageValue = numbersList.stream()
                 .mapToInt(Integer::intValue)
                 .average()
@@ -54,10 +56,12 @@ public class WorkingWithStream {
         students.add("Vladislav");
         students.add("Andrey");
 
+        // Select all names starting with "a"
         List<String> sortingByFirstA = students.stream()
                 .filter(name -> name.toLowerCase().startsWith("а"))
                 .toList();
 
+        // Sort and return the first element of the collection
         String FirstElement = students.stream()
                 .sorted()
                 .findFirst()
